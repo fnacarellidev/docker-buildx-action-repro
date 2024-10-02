@@ -1,0 +1,11 @@
+name: ci
+on:
+  push:
+
+jobs:
+  repro:
+     steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          buildkitd-flags: "--allow=network.host"
